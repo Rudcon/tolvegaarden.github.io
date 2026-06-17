@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tolvegården kontorfellesskap</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Tolvegården kontorfellesskap</h1>
+      <p>Tolvegården er et moderne kontorfellesskap - tilpasset fremtidens måter å jobbe på</p>
+      
+      <nav class="main-nav">
+        <button class="nav-button active" data-page="info">Om Arealene</button>
+        <button class="nav-button" data-page="offices">Ledige Kontorer</button>
+        <button class="nav-button" data-page="contact">Kontakt</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- INFO PAGE -->
+    <section id="info" class="page active">
+      <h2>Om Arealene</h2>
+      <p>Majoriteten av våre kontorer er 10 kvm og har en fantastisk utsikt mot elva, Spira Kulturhus og byfjorden. Alle kontorer inkluderer hev/senk pult og kontorstol, hvor også internett, strøm og rengjøring er inkludert i prisen. Lune arealer med god akustikk for å gi det beste forutsetninger for et godt arbeidsmiljø. Trivelige folk.</p>
+      
+      <div id="infoImages" class="image-gallery">
+        <!-- Bildeplassholder for arealene - legg inn bilder her senere -->
+        <div class="image-placeholder">Bilde 1 av arealene</div>
+        <div class="image-placeholder">Bilde 2 av arealene</div>
+        <div class="image-placeholder">Bilde 3 av arealene</div>
+      </div>
+      
+      <div id="infoText" class="info-section">
+        <!-- Avsnitt som legges inn senere -->
+      </div>
+    </section>
+
+    <!-- OFFICES PAGE -->
+    <section id="offices" class="page">
+      <h2>Ledige Kontorer</h2>
+      <p>Oversikt over alle kontorer ved Tolvegården</p>
+      
+      <div id="officesList" class="offices-grid">
+        <!-- Kontorer blir fylt inn av JavaScript -->
+      </div>
+      
+      <!-- Office Detail Modal -->
+      <div id="officeModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="officeTitle"></h3>
+          <div class="modal-body">
+            <div id="officeDetailImage" class="office-image-placeholder">Bilde av kontoret</div>
+            <div id="officeDetails"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT PAGE -->
+    <section id="contact" class="page">
+      <h2>Kontakt</h2>
+      
+      <div class="contact-info">
+        <div class="contact-details">
+          <h3>Kontaktinformasjon</h3>
+          <p><strong>Adresse:</strong> <span id="addressField">Legges inn senere</span></p>
+          <p><strong>Telefon:</strong> <span id="phoneField">Legges inn senere</span></p>
+          <p><strong>E-post:</strong> <span id="emailField">Legges inn senere</span></p>
+        </div>
+        
+        <div class="contact-persons">
+          <h3>Kontaktpersoner</h3>
+          <div class="persons-grid">
+            <div class="person-card">
+              <div class="person-image-placeholder">Bilde av kontaktperson 1</div>
+              <div class="person-info">
+                <p id="person1Name">Navn: Legges inn senere</p>
+                <p id="person1Title">Tittel: Legges inn senere</p>
+                <p id="person1Phone">Tlf: Legges inn senere</p>
+                <p id="person1Email">E-post: Legges inn senere</p>
+              </div>
+            </div>
+            
+            <div class="person-card">
+              <div class="person-image-placeholder">Bilde av kontaktperson 2</div>
+              <div class="person-info">
+                <p id="person2Name">Navn: Legges inn senere</p>
+                <p id="person2Title">Tittel: Legges inn senere</p>
+                <p id="person2Phone">Tlf: Legges inn senere</p>
+                <p id="person2Email">E-post: Legges inn senere</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Tolvegården kontorfellesskap. Alle rettigheter reservert.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
