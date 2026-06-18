@@ -118,7 +118,8 @@ section h3 {
   display: block;
 }
 
-.image-placeholder {
+.image-placeholder,
+.person-image-placeholder {
   background: var(--surface);
   border: 2px dashed var(--muted);
   border-radius: 12px;
@@ -132,12 +133,87 @@ section h3 {
   padding: 1rem;
 }
 
+.contact-info {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.persons-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.person-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.person-info {
+  flex: 1;
+}
+
+.person-info p {
+  margin: 0.4rem 0;
+}
+
+@media (max-width: 700px) {
+  .person-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .person-info {
+    width: 100%;
+  }
+}
+
 .info-section {
   background: var(--surface);
   padding: 2rem;
   border-radius: 12px;
   margin-top: 2rem;
   border: 1px solid #e2e8f0;
+}
+
+.info-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.floorplan-card,
+.map-card {
+  background: var(--surface);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.floorplan-placeholder,
+#map {
+  min-height: 300px;
+  border-radius: 12px;
+  background: #eef2f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .info-bottom-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Offices Grid */

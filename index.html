@@ -37,6 +37,17 @@
           Avsnitt med info om arealene legges inn senere, og vil inneholde mer detaljert informasjon om fasiliteter, beliggenhet, og andre relevante detaljer for potensielle leietakere.
          </p>
       </div>
+
+      <div class="info-bottom-grid">
+        <div class="floorplan-card">
+          <h3>Fremtidig plantegning</h3>
+          <div class="floorplan-placeholder">Plantegning legges inn her</div>
+        </div>
+        <div class="map-card">
+          <h3>Lokasjon</h3>
+          <div id="map"></div>
+        </div>
+      </div>
     </section>
 
     <!-- OFFICES PAGE -->
@@ -70,22 +81,12 @@
           <p><strong>Adresse:</strong> Strandaten 38, 4400 Flekkefjord</p>
           <div class="persons-grid">
             <div class="person-card">
-              <div class="person-image-placeholder">Bilde av kontaktperson 1</div>
+              <div class="person-image-placeholder">Bilde av kontaktperson</div>
               <div class="person-info">
                 <p id="person1Name">Navn: Frode Rudolfsen</p>
                 <p id="person1Title">Tittel: Legges inn senere</p>
                 <p id="person1Phone">Tlf: 482 70 233</p>
                 <p id="person1Email">E-post: Frode.rudolfsen@rudcon.no</p>
-              </div>
-            </div>
-            
-            <div class="person-card">
-              <div class="person-image-placeholder">Bilde av kontaktperson 2</div>
-              <div class="person-info">
-                <p id="person2Name">Navn: Arnhild Blychert</p>
-                <p id="person2Title">Tittel: Legges inn senere</p>
-                <p id="person2Phone">Tlf: Legges inn senere</p>
-                <p id="person2Email">E-post: Legges inn senere</p>
               </div>
             </div>
           </div>
@@ -99,5 +100,6 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>

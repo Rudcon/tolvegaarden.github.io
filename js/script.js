@@ -18,8 +18,8 @@ navButtons.forEach(button => {
 
 // Offices data - 19 kontorer
 const offices = [
-  { id: 1, name: 'Kontor 1', sqm: 10, available: true, tenant: null },
-  { id: 2, name: 'Kontor 2', sqm: 10, available: false, tenant: 'Bedrift AS' },
+  { id: 1, name: 'Kontor 1', sqm: 10, available: false, tenant: 'RUDCON AS' },
+  { id: 2, name: 'Kontor 2', sqm: 10, available: false, tenant: 'Fred Ingolf Strømland' },
   { id: 3, name: 'Kontor 3', sqm: 10, available: true, tenant: null },
   { id: 4, name: 'Kontor 4', sqm: 12, available: false, tenant: 'StartUp Inc' },
   { id: 5, name: 'Kontor 5', sqm: 10, available: true, tenant: null },
@@ -98,6 +98,22 @@ function openOfficeModal(office) {
 
 function closeOfficeModal() {
   modal.classList.remove('show');
+}
+
+// Map initialization for Google Maps API
+function initMap() {
+  const tolvegaarden = { lat: 58.297, lng: 6.649 };
+  const map = new google.maps.Map(document.getElementById('map'), {
+    center: tolvegaarden,
+    zoom: 15,
+    mapTypeId: 'roadmap'
+  });
+
+  new google.maps.Marker({
+    position: tolvegaarden,
+    map,
+    title: 'Tolvegården kontorfellesskap'
+  });
 }
 
 // Initialize offices list when page loads
