@@ -40,12 +40,22 @@
 
       <div class="info-bottom-grid">
         <div class="floorplan-card">
-          <h3>Fremtidig plantegning</h3>
+          <h3>Plantegning</h3>
           <div class="floorplan-placeholder">Plantegning legges inn her</div>
         </div>
         <div class="map-card">
           <h3>Lokasjon</h3>
-          <div id="map"></div>
+          <div id="map">
+            <iframe
+              src="https://www.google.com/maps?q=Strandaten%2038,%204400%20Flekkefjord&output=embed"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
       </div>
     </section>
@@ -100,6 +110,5 @@
   </footer>
 
   <script src="js/script.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
 </body>
 </html>
