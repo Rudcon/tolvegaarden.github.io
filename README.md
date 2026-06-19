@@ -9,3 +9,6 @@ git push
 
 For å hente endringer fra git:
 git pull
+
+
+Test for å sjekke om git funker
