@@ -19,24 +19,24 @@ navButtons.forEach(button => {
 // Offices data - 19 kontorer
 const offices = [
   { id: 1, name: 'Kontor 1', sqm: 10, available: false, tenant: 'RUDCON AS' },
-  { id: 2, name: 'Kontor 2', sqm: 10, available: false, tenant: 'Fred Ingolf Strømland' },
-  { id: 3, name: 'Kontor 3', sqm: 10, available: true, tenant: null },
-  { id: 4, name: 'Kontor 4', sqm: 12, available: false, tenant: 'StartUp Inc' },
-  { id: 5, name: 'Kontor 5', sqm: 10, available: true, tenant: null },
-  { id: 6, name: 'Kontor 6', sqm: 15, available: false, tenant: 'Konsult Ltd' },
-  { id: 7, name: 'Kontor 7', sqm: 10, available: true, tenant: null },
-  { id: 8, name: 'Kontor 8', sqm: 10, available: false, tenant: 'Design Studio' },
-  { id: 9, name: 'Kontor 9', sqm: 10, available: true, tenant: null },
-  { id: 10, name: 'Kontor 10', sqm: 20, available: false, tenant: 'Big Corp' },
-  { id: 11, name: 'Kontor 11', sqm: 10, available: true, tenant: null },
-  { id: 12, name: 'Kontor 12', sqm: 10, available: false, tenant: 'Tech Solutions' },
-  { id: 13, name: 'Kontor 13', sqm: 10, available: true, tenant: null },
-  { id: 14, name: 'Kontor 14', sqm: 12, available: false, tenant: 'Marketing Pro' },
-  { id: 15, name: 'Kontor 15', sqm: 10, available: true, tenant: null },
-  { id: 16, name: 'Kontor 16', sqm: 10, available: false, tenant: 'Finance Group' },
-  { id: 17, name: 'Kontor 17', sqm: 10, available: true, tenant: null },
-  { id: 18, name: 'Kontor 18', sqm: 15, available: false, tenant: 'Legal Associates' },
-  { id: 19, name: 'Kontor 19', sqm: 10, available: true, tenant: null }
+  { id: 2, name: 'Kontor 2', sqm: 8, available: false, tenant: 'RUDCON AS' },
+  { id: 3, name: 'Kontor 3', sqm: 8, available: true, tenant: null },
+  { id: 4, name: 'Kontor 4', sqm: 9, available: false, tenant: null },
+  { id: 5, name: 'Kontor 5', sqm: 8, available: false, tenant: null },
+  { id: 6, name: 'Kontor 6', sqm: 9, available: true, tenant: null },
+  { id: 7, name: 'Kontor 7', sqm: 9, available: true, tenant: null },
+  { id: 8, name: 'Kontor 8', sqm: 7, available: false, tenant: null },
+  { id: 9, name: 'Kontor 9', sqm: 8, available: true, tenant: null },
+  { id: 10, name: 'Kontor 10', sqm: 11, available: true, tenant: null },
+  { id: 11, name: 'Kontor 11', sqm: 7, available: true, tenant: null },
+  { id: 12, name: 'Kontor 12', sqm: 10, available: false, tenant: 'E-Boiler Invent AS' },
+  { id: 13, name: 'Kontor 13', sqm: 5, available: true, tenant: null },
+  { id: 14, name: 'Kontor 14', sqm: 7, available: true, tenant: null },
+  { id: 15, name: 'Kontor 15', sqm: 13, available: false, tenant: 'Flekkefjord Begravelsesbyrå' },
+  { id: 16, name: 'Kontor 16', sqm: 10, available: false, tenant: 'Flekkefjord Begravelsesbyrå' },
+  { id: 17, name: 'Kontor 17', sqm: 12, available: false, tenant: 'Flekkefjord Begravelsesbyrå' },
+  { id: 18, name: 'Kontor M2', sqm: 7, available: false, tenant: null },
+  { id: 19, name: 'Kontor M3', sqm: 7, available: true, tenant: null }
 ];
 
 // Render offices list
