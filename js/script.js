@@ -35,9 +35,18 @@ const offices = [
   { id: 15, name: 'Kontor 15', sqm: 13, available: false, tenant: 'Flekkefjord Begravelsesbyrå' },
   { id: 16, name: 'Kontor 16', sqm: 10, available: false, tenant: 'Flekkefjord Begravelsesbyrå' },
   { id: 17, name: 'Kontor 17', sqm: 12, available: false, tenant: 'Flekkefjord Begravelsesbyrå' },
-  { id: 18, name: 'Kontor M2', sqm: 7, available: false, tenant: 'Lister Advokatene AS' },
-  { id: 19, name: 'Kontor M3', sqm: 7, available: true, tenant: null }
+  { id: 18, name: 'Kontor M1', sqm: null, available: null, tenant: null },
+  { id: 19, name: 'Kontor M2', sqm: 7, available: false, tenant: 'Lister Advokatene AS' },
+  { id: 20, name: 'Kontor M3', sqm: 7, available: true, tenant: null },
+  { id: 21, name: 'Kontor M4', sqm: null, available: null, tenant: null }
 ];
+
+function getOfficeImage(office) {
+  const imageName = office.name.startsWith('Kontor M')
+    ? `${office.name.slice(-2)}.jpg`
+    : `K${office.id}.jpg`;
+  return `images/${imageName}`;
+}
 
 // Render offices list
 function renderOffices() {
@@ -49,18 +58,36 @@ function renderOffices() {
     officeCard.className = 'office-card';
     officeCard.onclick = () => openOfficeModal(office);
     
-    const statusClass = office.available ? 'status-available' : 'status-occupied';
-    const statusText = office.available ? 'Ledig' : 'Opptatt';
+    const statusClass = office.available === null
+      ? 'status-unknown'
+      : office.available ? 'status-available' : 'status-occupied';
+    const statusText = office.available === null
+      ? 'Ta kontakt'
+      : office.available ? 'Ledig' : 'Opptatt';
     const tenantInfo = office.tenant ? `<p><strong>Leietaker:</strong> ${office.tenant}</p>` : '';
+    const sizeText = office.sqm === null ? 'Ikke oppgitt' : `${office.sqm} kvm`;
     
     officeCard.innerHTML = `
       <h3>${office.name}</h3>
       <div class="office-info">
-        <p><strong>Kvadrat:</strong> ${office.sqm} kvm</p>
+        <p><strong>Kvadrat:</strong> ${sizeText}</p>
         ${tenantInfo}
         <div class="office-status ${statusClass}">${statusText}</div>
       </div>
     `;
+
+    const officeImage = document.createElement('img');
+    officeImage.className = 'office-card-image';
+    officeImage.src = getOfficeImage(office);
+    officeImage.alt = `Bilde av ${office.name}`;
+    officeImage.loading = 'lazy';
+    officeImage.addEventListener('error', () => {
+      const placeholder = document.createElement('div');
+      placeholder.className = 'office-card-image office-image-missing';
+      placeholder.textContent = 'Kontorbilde mangler';
+      officeImage.replaceWith(placeholder);
+    }, { once: true });
+    officeCard.prepend(officeImage);
     
     officesList.appendChild(officeCard);
   });
@@ -82,12 +109,32 @@ function openOfficeModal(office) {
   document.getElementById('officeTitle').textContent = office.name;
   
   const detailsDiv = document.getElementById('officeDetails');
-  const statusClass = office.available ? 'status-available' : 'status-occupied';
-  const statusText = office.available ? 'Ledig' : 'Opptatt';
-  const tenantInfo = office.tenant ? `<p><strong>Leietaker:</strong> ${office.tenant}</p>` : '<p><strong>Status:</strong> Ledig for leie</p>';
+  const statusClass = office.available === null
+    ? 'status-unknown'
+    : office.available ? 'status-available' : 'status-occupied';
+  const statusText = office.available === null
+    ? 'Ta kontakt'
+    : office.available ? 'Ledig' : 'Opptatt';
+  const tenantInfo = office.tenant
+    ? `<p><strong>Leietaker:</strong> ${office.tenant}</p>`
+    : office.available === null
+      ? '<p><strong>Tilgjengelighet:</strong> Ta kontakt</p>'
+      : '<p><strong>Status:</strong> Ledig for leie</p>';
+  const sizeText = office.sqm === null ? 'Ikke oppgitt' : `${office.sqm} kvm`;
+
+  const imageContainer = document.getElementById('officeDetailImage');
+  imageContainer.textContent = '';
+  const officeImage = document.createElement('img');
+  officeImage.className = 'office-detail-image';
+  officeImage.src = getOfficeImage(office);
+  officeImage.alt = `Bilde av ${office.name}`;
+  officeImage.addEventListener('error', () => {
+    imageContainer.textContent = 'Kontorbilde mangler';
+  }, { once: true });
+  imageContainer.appendChild(officeImage);
   
   detailsDiv.innerHTML = `
-    <p><strong>Størrelse:</strong> ${office.sqm} kvm</p>
+    <p><strong>Størrelse:</strong> ${sizeText}</p>
     ${tenantInfo}
     <div class="office-status ${statusClass}">${statusText}</div>
     <p><em>Alle kontorer inkluderer: hev/senk pult, kontorstol, internett, strøm og rengjøring</em></p>
